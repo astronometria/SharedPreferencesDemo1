@@ -24,6 +24,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.second);
 
         txt1=(TextView)findViewById(R.id.textView);
@@ -32,6 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("loginref",MODE_PRIVATE);
 
         savelogin=sharedPreferences.getBoolean("savelogin",true);
+
         if(savelogin==true){
             txt1.setText(sharedPreferences.getString("username",null));
             txt2.setText(sharedPreferences.getString("password",null));

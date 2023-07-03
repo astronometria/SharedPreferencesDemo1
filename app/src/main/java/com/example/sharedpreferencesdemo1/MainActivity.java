@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         editor=sharedPreferences.edit();
 
 
-        login.setOnClickListener(new View.OnClickListener() {
+      /*  login.setOnClickListener(new View.OnClickListener() {
             @Override    public void onClick(View v) {
                 login();
             }
-        });
+        });*/
 
         savelogin=sharedPreferences.getBoolean("savelogin",true);
         if(savelogin==true){
@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         }}
 
-    public void login(){
+    public void login(View v){
         String usrname = user.getText().toString();
         String passwrd = pass.getText().toString();
-
+        Intent i = new Intent(MainActivity.this, SecondActivity.class);
 
         if(savelogincheckbox.isChecked()){
             editor.putBoolean("savelogin",true);
@@ -62,13 +62,9 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "error",Toast.LENGTH_LONG).show();
         }
+        startActivity(i);
     }
-    public void myFunction1(View view) {
-        Toast.makeText(this, "Test", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(MainActivity.this, SecondActivity.class);
-            startActivity(i);
 
 
-    }
 
 }

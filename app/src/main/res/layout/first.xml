@@ -56,6 +56,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:onClick="myFunction1"
+        android:onClick="login"
         android:text="Button" />
 </RelativeLayout>
